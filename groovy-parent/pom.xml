@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>nz.net.osnz.parent</groupId>
+    <artifactId>java-parent</artifactId>
+    <version>6.2</version>
+  </parent>
+
+  <artifactId>groovy-parent</artifactId>
+  <version>6.3-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Open Source New Zealand - Central Groovy Parent</name>
+  <description>This is the central Groovy artifact for all groovy-based projects.</description>
+  <url>https://github.com/OpenSourceNZ/groovy-parent</url>
+
+  <properties>
+    <java.version>1.8</java.version>
+
+    <groovy.version>2.5.6</groovy.version>
+    <groovy.compiler.verbose>false</groovy.compiler.verbose>
+    <groovy-eclipse-compiler.version>3.3.0-01</groovy-eclipse-compiler.version>
+    <groovy-eclipse-batch.version>2.5.6-02</groovy-eclipse-batch.version>
+    <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+
+    <skip.integration.tests>false</skip.integration.tests>
+    <skip.functional.tests>false</skip.functional.tests>
+    <it.test />
+    <ft.test />
+  </properties>
+
+  <build>
+    <plugins>
+      <!--
+                Compile all classes with Groovy compiler.
+            -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+          <compilerId>groovy-eclipse-compiler</compilerId>
+          <verbose>${groovy.compiler.verbose}</verbose>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-eclipse-compiler</artifactId>
+            <version>${groovy-eclipse-compiler.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-eclipse-batch</artifactId>
+            <version>${groovy-eclipse-batch.version}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.groovy</groupId>
+        <artifactId>groovy-eclipse-compiler</artifactId>
+        <version>${groovy-eclipse-compiler.version}</version>
+        <extensions>true</extensions>
+      </plugin>
+
+      <!--
+                Add groovy source directories to the build.
+                See http://docs.codehaus.org/display/GROOVY/Groovy-Eclipse+compiler+plugin+for+Maven
+            -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <id>add-groovy-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>src/main/groovy</source>
+              </sources>
+            </configuration>
+          </execution>
+          <execution>
+            <id>add-groovy-test-source</id>
+            <phase>generate-test-sources</phase>
+            <goals>
+              <goal>add-test-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>src/test/groovy</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>com.bluetrainsoftware.maven</groupId>
+        <artifactId>groovydoc-maven-plugin</artifactId>
+        <version>2.1</version>
+        <executions>
+          <execution>
+            <id>attach-docs</id>
+            <phase>package</phase>
+            <goals>
+              <goal>attach-docs</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <scm>
+    <url>https://github.com/OpenSourceNZ/groovy-parent</url>
+    <connection>scm:git:git@github.com/OpenSourceNZ/groovy-parent.git</connection>
+    <developerConnection>scm:git:git@github.com:OpenSourceNZ/groovy-parent.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+
+</project>
