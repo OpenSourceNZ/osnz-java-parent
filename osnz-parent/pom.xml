@@ -4,7 +4,7 @@
 
   <groupId>nz.net.osnz.parent</groupId>
   <artifactId>osnz-parent</artifactId>
-  <version>7-SNAPSHOT</version>
+  <version>7</version>
   <packaging>pom</packaging>
 
   <name>osnz-parent</name>
@@ -30,7 +30,7 @@
     <url>https://github.com/OpenSourceNZ/osnz-java-parent/osnz-parent</url>
     <connection>scm:git:git@github.com/OpenSourceNZ/osnz-java-parent.git</connection>
     <developerConnection>scm:git:git@github.com:OpenSourceNZ/osnz-java-parent.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>osnz-parent-7</tag>
   </scm>
 
   <properties>
