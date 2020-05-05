@@ -36,9 +36,9 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <repository.release.id>oss-release</repository.release.id>
-    <repository.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</repository.release.url>
+    <repository.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2</repository.release.url>
     <repository.snapshot.id>oss-release</repository.snapshot.id>
-    <repository.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots/</repository.snapshot.url>
+    <repository.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots</repository.snapshot.url>
   </properties>
 
   <distributionManagement>
