@@ -11,7 +11,7 @@
   <groupId>nz.net.osnz.parent</groupId>
   <artifactId>central-parent</artifactId>
   <name>central-parent</name>
-  <version>6.3</version>
+  <version>6.4-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <description>
@@ -40,7 +40,7 @@
     <url>https://github.com/OpenSourceNZ/osnz-java-parent/central-parent</url>
     <connection>scm:git:git@github.com/OpenSourceNZ/osnz-java-parent.git</connection>
     <developerConnection>scm:git:git@github.com:OpenSourceNZ/osnz-java-parent.git</developerConnection>
-    <tag>central-parent-6.3</tag>
+    <tag>HEAD</tag>
   </scm>
 
 </project>
