@@ -6,7 +6,6 @@
     <groupId>io.osnz.parent</groupId>
     <artifactId>osnz-parent</artifactId>
     <version>1.2</version>
-    <packaging>pom</packaging>
   </parent>
 
   <groupId>nz.net.osnz.parent</groupId>
